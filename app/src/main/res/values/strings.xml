@@ -1,0 +1,51 @@
+<resources>
+    <!--MAIN APPS APPLICATION NAME-->
+    <string name="app_name">mvp_finacel</string>
+
+
+    <!--COMPONENTS AND LABELS -->
+    <string name="tab_view_pulsa">Pulsa</string>
+    <string name="tab_view_data_package">Data Package</string>
+
+    <string name="toolbar_load_confirmation">Loan Confirmation</string>
+    <string name="toolbar_merchant_promo">Merchant Promo</string>
+
+    <string name="rv_label_nominal">Nominal :</string>
+
+    <string name="header_label_promo">Promos</string>
+    <string name="header_payment_detail">Palment Details</string>
+    <string name="header_order_detail">Order Details</string>
+    <string name="header_kredivo_pin">Kredivo PIN</string>
+
+    <string name="label_input_pin">PIN</string>
+    <string name="label_valid_date">Valid Date</string>
+    <string name="label_voucher_code">Voucher Code</string>
+    <string name="label_value_valid_date">10 - 31 Januari 2019</string>
+    <string name="label_value_voucher_code">BIRTHDAY9</string>
+    <string name="label_copy">COPY</string>
+    <string name="label_status">Status</string>
+    <string name="label_admin_fee">Status</string>
+    <string name="label_order_id">Order ID</string>
+
+
+    <string name="button_ok">OK</string>
+    <string name="button_pay">PAY</string>
+
+
+    <string name="footnote_pin_1">By continuing, I agree with </string>
+    <string name="footnote_pin_2">load agreement of Kredivo</string>
+    <string name="footnote_invoice_1">Invoice has been emailed to you\n</string>
+    <string name="footnote_invoice_2">Have problem? Email us at</string>
+    <string name="footnote_invoice_3">support@kredivo.com</string>
+
+    <string name="title_promo">support@kredivo.com</string>
+
+
+    <string name="termcondi_1">Promo berlaku untuk transaksi yang dilakukan di aplikasi terbaru Bukalapak.</string>
+    <string name="termcondi_2">Gunakan kode BIRTHDAY9 untuk dapatkan cashback sebesar 3%.</string>
+    <string name="termcondi_3">Promo hanya berlaku untuk transaksi yang menggunakan metode pengiriman J/T Express dan Ninja Xpress (REG dan FAST).</string>
+    <string name="termcondi_4">Setiap pengguna bisa menggunakan promo sebanyak 1 (satu) kali perhari dan maksimal 2 (dua) kali selama periode Promo.</string>
+    <string name="termcondi_5">Promo bisa digunakan untuk belanja produk kategori apa saja yang ada di Bukalapak, kecuali kategori tiket dan voucher, produk virtual (pulsa, paket data, voucher game, listrik prabayar / pascabayar, tiket event, tiket pesawat, tiket kereta, pemabayaran zakat online, pembayaran tagihan, listrik, air, PDAM, dan BPJS) dan produk keuangan (BukaEmas dan BukaReksa).</string>
+
+
+</resources>
