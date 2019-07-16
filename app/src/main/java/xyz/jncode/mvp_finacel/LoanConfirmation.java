@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,8 @@ public class LoanConfirmation extends AppCompatActivity {
     AppCompatEditText edPin;
 
     AppCompatButton payButton;
+
+    AppCompatImageView backButton;
 
 
     @Override
@@ -32,6 +35,7 @@ public class LoanConfirmation extends AppCompatActivity {
         tvAmountTotal = findViewById(R.id.amount_total_id);
         payButton = findViewById(R.id.pay_button_id);
         edPin = findViewById(R.id.edit_pin_id);
+        backButton = findViewById(R.id.close_payment_detail_id);
 
         tvAmountProductBought.setText(amount);
         tvAmountTotal.setText(amount);
@@ -50,6 +54,14 @@ public class LoanConfirmation extends AppCompatActivity {
                     startActivity(goToFinalTransaction);
                 }
 
+            }
+        });
+
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

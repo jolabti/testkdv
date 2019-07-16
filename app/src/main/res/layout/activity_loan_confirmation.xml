@@ -16,10 +16,20 @@
         >
 
 
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/close_payment_detail_id"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_arrow_back"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginLeft="20dp"
+            />
+
+
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="center|center_vertical"
             android:text="Loan Confirmation"
             android:textColor="#ffffff"
             android:textSize="20sp"
