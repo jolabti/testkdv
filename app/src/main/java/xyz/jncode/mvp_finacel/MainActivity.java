@@ -4,12 +4,17 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
 
 import java.util.ArrayList;
 
 import xyz.jncode.mvp_finacel.Adapter.CustomAdapter;
+import xyz.jncode.mvp_finacel.Adapter.PromosAdapter;
 import xyz.jncode.mvp_finacel.Adapter.TabAdapter;
 import xyz.jncode.mvp_finacel.Fragments.FragmentDataPackage;
 import xyz.jncode.mvp_finacel.Fragments.FragmentPulsa;
@@ -17,10 +22,13 @@ import xyz.jncode.mvp_finacel.Fragments.FragmentPulsa;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Integer> productPulsa;
+    ArrayList<Integer> productPromotions;
 
-    CustomAdapter customAdapter;
+    PromosAdapter promosAdapter;
 
-    RecyclerView rvComponent;
+    RecyclerView rvPromotion;
+
+    AppCompatEditText editTextPhoneNumber;
 
     private TabAdapter tabadapter;
     private TabLayout tabLayout;
@@ -33,40 +41,83 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        rvPromotion = findViewById(R.id.rv_promos);
+
+        productPromotions = new ArrayList<>();
+        productPromotions.clear();
+
+        productPromotions.add(R.drawable.bann_2);
+        productPromotions.add(R.drawable.bann_3);
+        productPromotions.add(R.drawable.bann_5);
+        productPromotions.add(R.drawable.bann_6);
+
+        editTextPhoneNumber = findViewById(R.id.number_phone_input_id);
+
 
         tabLayout = findViewById(R.id.tabs);
         viewPager = findViewById(R.id.viewpager);
 
-        rvComponent = findViewById(R.id.rv_products);
+
+        viewPager.setVisibility(View.GONE);
+
+
+        editTextPhoneNumber.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                if(s.length()>=4){
+                    viewPager.setVisibility(View.VISIBLE);
+                }
+
+                if(s.length()<4){
+                    viewPager.setVisibility(View.GONE);
+                }
+
+                if(s.length()>=22){
+                    editTextPhoneNumber.setError("Format nomor telepon tidak valid !");
+                }
+
+            }
+        });
+
+
         productPulsa = new ArrayList<>();
 
         productPulsa.clear();
 
         tabadapter = new TabAdapter(getSupportFragmentManager());
-        tabadapter.addFragment(new FragmentPulsa(), "Pulsa");
-        tabadapter.addFragment(new FragmentDataPackage(), "Data Package");
+        tabadapter.addFragment(new FragmentPulsa(), getResources().getString(R.string.tab_view_pulsa), editTextPhoneNumber.getText().toString());
+        tabadapter.addFragment(new FragmentDataPackage(), getResources().getString(R.string.tab_view_data_package), editTextPhoneNumber.getText().toString());
+
         viewPager.setAdapter(tabadapter);
         tabLayout.setupWithViewPager(viewPager);
 
-//        for (int a = 1; a <= 8; a++) {
-//
-//            if(a%2==0 && a >0){
-//                result = a * 25000;
-//                productPulsa.add(result);
-//            }
-//        }
-//
-//        generateList(productPulsa);
+
+        generatePromo(productPromotions);
 
 
     }
 
-//    void generateList(ArrayList<Integer> mycollectionProduct) {
-//        customAdapter = new CustomAdapter(this, mycollectionProduct);
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.VERTICAL, false);
-//
-//        rvComponent.setLayoutManager(layoutManager);
-//        rvComponent.setAdapter(customAdapter);
-//
-//    }
+
+
+    void generatePromo(ArrayList<Integer> mycollectionPromo) {
+        promosAdapter = new PromosAdapter(this, mycollectionPromo);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
+
+        rvPromotion.setLayoutManager(layoutManager);
+        rvPromotion.setAdapter(promosAdapter);
+
+    }
 }

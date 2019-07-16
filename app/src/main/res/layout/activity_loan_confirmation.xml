@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    tools:context=".TransactionDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_toolbar"
+        android:orientation="horizontal"
+
+        >
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Loan Confirmation"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="normal"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_toolbar"
+        android:orientation="vertical"
+
+        >
+
+
+
+
+
+        <include layout="@layout/payment_details"></include>
+
+
+        <include layout="@layout/kredivo_pin_page"></include>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="bottom">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/pay_button_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_button_action_submit"
+            android:text="PAY"
+
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

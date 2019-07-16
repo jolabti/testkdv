@@ -11,6 +11,7 @@ import java.util.List;
 public class TabAdapter extends FragmentStatePagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
+    private final List<String> mPhone = new ArrayList<>();
 
     public TabAdapter(FragmentManager fm) {
         super(fm);
@@ -21,9 +22,10 @@ public class TabAdapter extends FragmentStatePagerAdapter {
         return mFragmentList.get(position);
     }
 
-    public void addFragment(Fragment fragment, String title) {
+    public void addFragment(Fragment fragment, String title, String numberPhone) {
         mFragmentList.add(fragment);
         mFragmentTitleList.add(title);
+        mPhone.add(numberPhone);
     }
 
     @Nullable

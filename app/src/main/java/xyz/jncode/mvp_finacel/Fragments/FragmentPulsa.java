@@ -1,12 +1,14 @@
 package xyz.jncode.mvp_finacel.Fragments;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,7 @@ import xyz.jncode.mvp_finacel.Adapter.CustomAdapter;
 import xyz.jncode.mvp_finacel.Adapter.PromosAdapter;
 import xyz.jncode.mvp_finacel.R;
 
+@SuppressLint("ValidFragment")
 public class FragmentPulsa extends Fragment {
 
     RecyclerView rvComponent, rvPromotion;
@@ -26,8 +29,11 @@ public class FragmentPulsa extends Fragment {
     ArrayList<Integer> productPromotions;
     int result;
 
+    @SuppressLint("ValidFragment")
     public FragmentPulsa() {
         // Required empty public constructor
+
+
     }
 
     @Override
@@ -74,13 +80,15 @@ public class FragmentPulsa extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+
         generateList(productPulsa);
-        generatePromo(productPromotions);
+
 
     }
 
     void generateList(ArrayList<Integer> mycollectionProduct) {
-        customAdapter = new CustomAdapter(getActivity(), mycollectionProduct);
+        customAdapter = new CustomAdapter(getActivity(), mycollectionProduct,"");
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL, false);
 
         rvComponent.setLayoutManager(layoutManager);
@@ -88,12 +96,5 @@ public class FragmentPulsa extends Fragment {
 
     }
 
-    void generatePromo(ArrayList<Integer> mycollectionPromo) {
-        promosAdapter = new PromosAdapter(getActivity(), mycollectionPromo);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL, false);
 
-        rvPromotion.setLayoutManager(layoutManager);
-        rvPromotion.setAdapter(promosAdapter);
-
-    }
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ededed"
+    android:background="@color/color_white"
 
     android:orientation="vertical">
 
@@ -39,9 +39,9 @@
                         android:layout_marginTop="10dp"
                         android:gravity="left|center"
                         android:padding="5dp"
-                        android:text="Kredivo PIN"
+                        android:text="Order Details"
                         android:textColor="@color/color_black_text"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
 
@@ -68,103 +68,85 @@
                         android:layout_marginRight="10dp"
                         android:orientation="horizontal">
 
+                        <include layout="@layout/loan_page"></include>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+
+                        android:background="@color/color_background_bottom_footnote">
+
+
+                    </View>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
                         <android.support.v7.widget.AppCompatTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_weight="0.8"
-                            android:text="PIN"
+                            android:text="Status"
+
 
                             android:textColor="@color/color_black_text"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
 
-
-
-                    </LinearLayout>
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="10dp"
-                        android:orientation="horizontal">
-
-
-                        <android.support.design.widget.TextInputLayout
-                            android:id="@+id/text_input_layout_password"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <EditText
-                                android:id="@+id/edit_text_password"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Masukkan Password"
-                                android:inputType="textPassword"
-                                android:singleLine="true" />
-                        </android.support.design.widget.TextInputLayout>
-
-
-
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:background="@color/color_background_bottom_footnote"></View>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-
-                            android:gravity="center"
-                            android:layout_width="match_parent"
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="20sp"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:orientation="horizontal">
+                            android:layout_weight="0.2"
 
-                            <android.support.v7.widget.AppCompatTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:text="@string/footnote_pin_1"
-                                android:textColor="@color/color_grey_text"
-                                android:textSize="12sp"
-                                 />
+                            android:gravity="right"
+                            android:text="Success"
+                            android:textColor="@color/color_success_text"
+                            android:textSize="14sp" />
 
-                            <android.support.v7.widget.AppCompatTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="2dp"
-                                android:gravity="right"
-                                android:text="@string/footnote_pin_2"
-                                android:textColor="@color/color_blue_text"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                />
+                    </LinearLayout>
 
-                        </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.8"
+                            android:text="Order ID"
+
+                            android:textColor="@color/color_black_text"
+                            android:textSize="14sp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.2"
+                            android:gravity="right"
+                            android:text="KDV - Axc34FFF"
+                            android:textColor="@color/color_black_text"
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 

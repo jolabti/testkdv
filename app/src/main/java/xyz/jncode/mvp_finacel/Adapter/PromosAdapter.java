@@ -1,10 +1,10 @@
 package xyz.jncode.mvp_finacel.Adapter;
 //https://www.androidhive.info/2015/09/android-material-design-working-with-tabs/
+
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import xyz.jncode.mvp_finacel.PromoActivity;
 import xyz.jncode.mvp_finacel.R;
 
 public class PromosAdapter extends RecyclerView.Adapter<PromosAdapter.CustomViewHolder> {
@@ -20,10 +21,12 @@ public class PromosAdapter extends RecyclerView.Adapter<PromosAdapter.CustomView
     private Context context;
 
 
-    public PromosAdapter(Context context, ArrayList<Integer> mypromos) {
+
+    public PromosAdapter(Context context, ArrayList<Integer> mypromos ) {
 
         this.mypromos = mypromos;
         this.context = context;
+
     }
 
     @NonNull
@@ -39,9 +42,15 @@ public class PromosAdapter extends RecyclerView.Adapter<PromosAdapter.CustomView
     public void onBindViewHolder(@NonNull PromosAdapter.CustomViewHolder customViewHolder, int i) {
 
 
+        customViewHolder.imagePromo.setImageResource(mypromos.get(i));
 
-
-            customViewHolder.imagePromo.setImageResource(mypromos.get(i));
+        customViewHolder.imagePromo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gotoPromo = new Intent(context, PromoActivity.class);
+                context.startActivity(gotoPromo);
+            }
+        });
 
 
     }
@@ -61,7 +70,6 @@ public class PromosAdapter extends RecyclerView.Adapter<PromosAdapter.CustomView
             super(itemView);
 
             imagePromo = itemView.findViewById(R.id.image_promo_id);
-
 
 
         }

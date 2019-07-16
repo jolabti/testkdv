@@ -80,10 +80,13 @@
                             >
 
                             <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/number_phone_input_id"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.5"
                                 android:hint="Masukkan nomor telepon"
+                                android:textColor="@color/color_grey_text"
+                                android:inputType="phone"
                                 android:textSize="12sp"
                                 android:textColorHint="@color/color_grey_text"
                                 />

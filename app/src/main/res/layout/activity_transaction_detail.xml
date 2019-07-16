@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    tools:context=".TransactionDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/color_toolbar"
+        android:orientation="horizontal"
+
+        >
+
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/close_payment_detail_id"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/close_white_icon"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_marginLeft="20dp"
+            />
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Payment Details"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="normal"
+
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_toolbar"
+        android:orientation="vertical"
+
+        >
+
+
+        <include layout="@layout/order_details_page"></include>
+
+
+        <include layout="@layout/payment_details"></include>
+
+
+        <include layout="@layout/layout_notif_payment"></include>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="bottom">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/button_ok_payment_detail_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_button_action_submit"
+            android:text="OK"
+
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
